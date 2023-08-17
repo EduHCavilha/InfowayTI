@@ -1,0 +1,20 @@
+name: Auto Update
+
+on:
+  push:
+    branches:
+      - main  # ou a branch que você deseja monitorar
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout do repositório
+      uses: actions/checkout@v2
+      
+    - name: Atualizar código
+      run: |
+        git pull
+        # Comandos adicionais para executar após a atualização
+
